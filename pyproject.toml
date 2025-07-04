@@ -8,12 +8,11 @@ dependencies = [
     "azure-monitor-query",
     "azure-identity",
     "rich>=14.0.0",
+    "typer>=0.16.0",
 ]
 
 [project.scripts]
 azure-sql-db-tools = "azure_sql_db_tools:main"
-db-errors = "azure_sql_db_tools.cli:errors"
-db-slow-queries = "azure_sql_db_tools.cli:slow_queries"
 
 [project.optional-dependencies]
 dev = ["ruff", "mypy"]

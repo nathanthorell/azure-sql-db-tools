@@ -24,4 +24,4 @@ repos:
     hooks:
       - id: mypy
         args: [--config-file=pyproject.toml]
-        additional_dependencies: [rich, azure-identity, azure-monitor-query]
+        additional_dependencies: [rich, typer, azure-identity, azure-monitor-query]

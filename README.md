@@ -51,24 +51,35 @@ verbose = false
 
 ## Common Commands
 
+### CLI Help
+
+```shell
+# View all available commands
+uv run azure-sql-db-tools --help
+
+# View help for specific commands
+uv run azure-sql-db-tools errors --help
+uv run azure-sql-db-tools slow-queries --help
+```
+
 ### SQL Error Analysis
 
 ```shell
-# View recent SQL errors (default: 50 minutes)
-uv run db-errors
+# View recent SQL errors (default: from config)
+uv run azure-sql-db-tools errors
 
 # View errors from specific time period
-uv run db-errors 30
+uv run azure-sql-db-tools errors 30
 ```
 
 ### Performance Analysis
 
 ```shell
-# View slow queries (default: 5000ms threshold)
-uv run db-slow-queries
+# View slow queries (default: from config)
+uv run azure-sql-db-tools slow-queries
 
 # View slow queries with custom time and threshold
-uv run db-slow-queries 30 10000
+uv run azure-sql-db-tools slow-queries 30 10000
 ```
 
 ### Development Commands
@@ -91,8 +102,7 @@ azure-sql-db-tools/
 ├── src/
 │   └── azure_sql_db_tools/
 │       ├── __init__.py
-│       ├── __main__.py          # Main CLI entry point
-│       ├── cli.py               # Individual command entry points
+│       ├── __main__.py          # Main CLI entry point with Typer
 │       ├── config.py            # Configuration management
 │       ├── logs_client.py       # Azure Log Analytics client
 │       └── rich_utils.py        # Terminal formatting utilities
