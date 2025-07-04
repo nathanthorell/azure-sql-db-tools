@@ -1,0 +1,17 @@
+[azure]
+# Your Azure Log Analytics workspace ID
+workspace_id = "workspace-guid"
+
+[defaults]
+# Default time range for queries (in minutes)
+time_range_minutes = 50
+
+# Default threshold for slow queries (in milliseconds)
+slow_query_threshold_ms = 5000
+
+[logging]
+# Log level: DEBUG, INFO, WARNING, ERROR
+level = "INFO"
+
+# Enable verbose output
+verbose = false
